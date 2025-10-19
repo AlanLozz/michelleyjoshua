@@ -1,0 +1,11 @@
+# Headers para todos los archivos
+/*
+  X-Content-Type-Options: nosniff
+
+# Headers específicos para archivos JavaScript
+/assets/*.js
+  Content-Type: application/javascript; charset=utf-8
+
+# Headers para archivos CSS
+/assets/*.css
+  Content-Type: text/css; charset=utf-8
