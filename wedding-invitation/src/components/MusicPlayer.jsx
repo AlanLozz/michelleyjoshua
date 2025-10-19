@@ -24,13 +24,34 @@ const MusicPlayer = () => {
           setIsPlaying(true);
           setHasStarted(true);
         } catch (error) {
-          // Autoplay bloqueado por el navegador - el usuario debe interactuar primero
-          console.log('Autoplay was prevented. User interaction required.');
+          // Autoplay bloqueado - intentar reproducir en la primera interacción del usuario
+          const handleFirstInteraction = async () => {
+            if (audioRef.current && !hasStarted) {
+              try {
+                await audioRef.current.play();
+                setIsPlaying(true);
+                setHasStarted(true);
+                // Remover listeners después de reproducir
+                document.removeEventListener('click', handleFirstInteraction);
+                document.removeEventListener('touchstart', handleFirstInteraction);
+                document.removeEventListener('scroll', handleFirstInteraction);
+              } catch (err) {
+                console.log('Play failed:', err);
+              }
+            }
+          };
+
+          // Agregar listeners para cualquier interacción del usuario
+          document.addEventListener('click', handleFirstInteraction, { once: true });
+          document.addEventListener('touchstart', handleFirstInteraction, { once: true });
+          document.addEventListener('scroll', handleFirstInteraction, { once: true });
         }
       }
     };
 
-    playAudio();
+    // Intentar reproducir después de un pequeño delay
+    const timer = setTimeout(playAudio, 500);
+    return () => clearTimeout(timer);
   }, [hasStarted]);
 
   const togglePlay = async () => {
