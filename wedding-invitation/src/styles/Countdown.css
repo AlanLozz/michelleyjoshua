@@ -1,0 +1,121 @@
+.countdown {
+  padding: var(--spacing-xl) var(--spacing-md);
+  background-color: var(--color-light);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Patrón de fondo */
+.countdown::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image:
+    radial-gradient(circle, var(--color-primary) 1px, transparent 1px);
+  background-size: 30px 30px;
+  opacity: 0.05;
+  pointer-events: none;
+}
+
+.countdown-title {
+  font-family: var(--font-display);
+  color: var(--color-dark);
+  margin-bottom: var(--spacing-lg);
+  position: relative;
+  z-index: 1;
+}
+
+.countdown-title::after {
+  content: '';
+  display: block;
+  width: 100px;
+  height: 2px;
+  background-color: var(--color-primary);
+  margin: var(--spacing-sm) auto 0;
+}
+
+.countdown-timer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: var(--spacing-md);
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.countdown-item {
+  background-color: var(--color-cream);
+  padding: var(--spacing-md);
+  border: 2px solid var(--color-primary);
+  box-shadow: var(--shadow-md);
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.countdown-item::before {
+  content: '';
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  border: 1px solid var(--color-secondary);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.countdown-item:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+}
+
+.countdown-item:hover::before {
+  opacity: 1;
+}
+
+.countdown-value {
+  display: block;
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 700;
+  color: var(--color-dark);
+  line-height: 1;
+  margin-bottom: var(--spacing-xs);
+}
+
+.countdown-label {
+  display: block;
+  font-family: var(--font-accent);
+  font-size: clamp(0.8rem, 1.5vw, 1rem);
+  color: var(--color-primary);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 500;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .countdown {
+    padding: var(--spacing-lg) var(--spacing-md);
+  }
+
+  .countdown-timer {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-sm);
+  }
+
+  .countdown-item {
+    padding: var(--spacing-sm);
+  }
+}
+
+@media (max-width: 480px) {
+  .countdown-timer {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

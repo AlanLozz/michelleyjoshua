@@ -1,0 +1,41 @@
+.app {
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* Smooth scroll entre secciones */
+.app section {
+  scroll-margin-top: 20px;
+}
+
+/* Animación de entrada para secciones */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.app section {
+  animation: fadeInUp 0.8s ease-out;
+}
+
+/* Decoración entre secciones */
+.app section:not(:last-child)::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    var(--color-primary) 20%,
+    var(--color-primary) 80%,
+    transparent
+  );
+  margin-top: var(--spacing-xl);
+}

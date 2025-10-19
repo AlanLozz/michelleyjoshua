@@ -1,0 +1,138 @@
+/* Importar fuentes de Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&family=Lora:wght@400;500;600&family=Montserrat:wght@300;400;500&display=swap');
+
+:root {
+  /* Paleta de colores rústicos */
+  --color-primary: #8B7355;        /* Marrón tierra */
+  --color-secondary: #A0826D;      /* Marrón claro */
+  --color-accent: #6B8E23;         /* Verde oliva */
+  --color-light: #F5F1E8;          /* Beige claro */
+  --color-cream: #FFF8E7;          /* Crema */
+  --color-dark: #4A3C2F;           /* Marrón oscuro */
+  --color-text: #3E2C1F;           /* Texto oscuro */
+  --color-wood: #8B6F47;           /* Madera */
+
+  /* Tipografía */
+  --font-display: 'Playfair Display', serif;
+  --font-body: 'Lora', serif;
+  --font-accent: 'Montserrat', sans-serif;
+
+  /* Espaciado */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 2rem;
+  --spacing-lg: 3rem;
+  --spacing-xl: 4rem;
+
+  /* Sombras */
+  --shadow-sm: 0 2px 4px rgba(62, 44, 31, 0.1);
+  --shadow-md: 0 4px 8px rgba(62, 44, 31, 0.15);
+  --shadow-lg: 0 8px 16px rgba(62, 44, 31, 0.2);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-body);
+  color: var(--color-text);
+  background-color: var(--color-cream);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+#root {
+  width: 100%;
+}
+
+.app {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* Tipografía global */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  color: var(--color-dark);
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: var(--spacing-sm);
+}
+
+h1 {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+}
+
+h2 {
+  font-size: clamp(2rem, 4vw, 3rem);
+}
+
+h3 {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+}
+
+p {
+  margin-bottom: var(--spacing-sm);
+}
+
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+a:hover {
+  color: var(--color-secondary);
+}
+
+/* Utilidades */
+.text-center {
+  text-align: center;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+}
+
+/* Botones globales */
+button,
+.button {
+  font-family: var(--font-accent);
+  font-weight: 500;
+  padding: 0.875rem 2rem;
+  border: 2px solid var(--color-primary);
+  background-color: var(--color-primary);
+  color: var(--color-cream);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.9rem;
+}
+
+button:hover,
+.button:hover {
+  background-color: transparent;
+  color: var(--color-primary);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+button:active,
+.button:active {
+  transform: translateY(0);
+}
