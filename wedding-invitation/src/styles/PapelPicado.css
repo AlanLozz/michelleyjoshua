@@ -1,0 +1,32 @@
+.papel-picado-container {
+  width: 100%;
+  position: relative;
+  margin: var(--spacing-lg) 0;
+  padding: var(--spacing-sm) 0;
+  overflow: hidden;
+}
+
+.papel-picado-svg {
+  width: 100%;
+  height: auto;
+  max-height: 120px;
+  display: block;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.15));
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .papel-picado-container {
+    margin: var(--spacing-md) 0;
+  }
+
+  .papel-picado-svg {
+    max-height: 100px;
+  }
+}
+
+@media (max-width: 480px) {
+  .papel-picado-svg {
+    max-height: 80px;
+  }
+}

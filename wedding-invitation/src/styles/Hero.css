@@ -1,16 +1,45 @@
+/* Hero Section - Colonial Modern Design */
 .hero {
   min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, var(--color-light) 0%, var(--color-cream) 100%);
   position: relative;
   overflow: hidden;
   padding: var(--spacing-md);
   text-align: center;
+
+  /* Background Image - San Miguel de Allende */
+  background-image:
+    url('https://images.unsplash.com/photo-1672771103549-1d58300f4697?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1887'),
+    linear-gradient(135deg, #C1502E 0%, #E8B4B8 100%);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-blend-mode: soft-light;
+  background-attachment: fixed;
 }
 
-/* Efecto de textura rústica de fondo */
+/* Vertical Gradient Overlay - Dark top to transparent bottom */
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(62, 44, 31, 0.85) 0%,
+    rgba(74, 60, 47, 0.65) 30%,
+    rgba(139, 115, 85, 0.45) 60%,
+    rgba(245, 241, 232, 0.25) 85%,
+    rgba(255, 248, 231, 0.15) 100%
+  );
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Subtle texture overlay */
 .hero::before {
   content: '';
   position: absolute;
@@ -21,98 +50,390 @@
   background-image:
     repeating-linear-gradient(
       90deg,
-      rgba(139, 115, 85, 0.03) 0px,
+      rgba(139, 115, 85, 0.05) 0px,
       transparent 1px,
       transparent 2px,
-      rgba(139, 115, 85, 0.03) 3px
+      rgba(139, 115, 85, 0.05) 3px
     );
   pointer-events: none;
-  opacity: 0.5;
+  opacity: 0.3;
+  z-index: 2;
 }
 
-/* Decoración floral/vintage en las esquinas */
-.hero::after {
-  content: '✦';
+/* La Parroquia Silhouette */
+.hero-parroquia {
   position: absolute;
-  font-size: 3rem;
-  color: var(--color-primary);
-  opacity: 0.2;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 300px;
+  height: 400px;
+  z-index: 2;
+  opacity: 1;
+  pointer-events: none;
+}
+
+.hero-parroquia svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* Decorative Floral Elements */
+.hero-floral {
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  color: var(--color-parroquia);
+  z-index: 3;
+  opacity: 0.7;
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.3));
+}
+
+.hero-floral-top-left {
+  top: 2rem;
+  left: 2rem;
+}
+
+.hero-floral-top-right {
   top: 2rem;
   right: 2rem;
+  transform: scaleX(-1);
 }
 
+/* Hero Content Container */
 .hero-content {
   position: relative;
-  z-index: 1;
-  max-width: 800px;
-  padding: var(--spacing-lg);
-  background: rgba(255, 255, 255, 0.6);
-  backdrop-filter: blur(10px);
-  border: 2px solid var(--color-primary);
-  box-shadow: var(--shadow-lg);
+  z-index: 4;
+  max-width: 900px;
+  padding: var(--spacing-xl) var(--spacing-lg);
 }
 
-.hero-title {
-  font-family: var(--font-display);
-  font-size: clamp(2.5rem, 6vw, 5rem);
-  color: var(--color-dark);
-  margin-bottom: var(--spacing-sm);
-  font-weight: 700;
-  letter-spacing: 2px;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+/* Divider Ornaments */
+.hero-divider-top,
+.hero-divider-bottom {
+  margin: var(--spacing-md) 0;
 }
 
+.hero-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  margin: var(--spacing-md) 0;
+}
+
+.divider-line {
+  width: 80px;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    var(--color-gold),
+    transparent
+  );
+}
+
+.divider-ornament {
+  font-size: 1.8rem;
+  color: var(--color-gold);
+  opacity: 0.9;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+/* Subtitle - "Nos casamos" */
 .hero-subtitle {
   font-family: var(--font-accent);
-  font-size: clamp(1rem, 2vw, 1.5rem);
-  color: var(--color-primary);
+  font-size: clamp(0.875rem, 1.5vw, 1.125rem);
+  color: var(--color-gold);
   text-transform: uppercase;
-  letter-spacing: 4px;
-  margin-bottom: var(--spacing-md);
-  font-weight: 300;
+  letter-spacing: 6px;
+  margin-bottom: var(--spacing-sm);
+  font-weight: 400;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.5);
 }
 
+/* Main Title - Names */
+.hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 8vw, 6.5rem);
+  color: #FFFFFF;
+  margin: var(--spacing-sm) 0;
+  font-weight: 400;
+  letter-spacing: 3px;
+  line-height: 1.1;
+  text-shadow:
+    0 2px 20px rgba(0, 0, 0, 0.6),
+    0 4px 40px rgba(139, 115, 85, 0.4);
+}
+
+.hero-title .ampersand {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 0.85em;
+  color: var(--color-gold);
+  margin: 0 0.3em;
+  text-shadow:
+    0 2px 20px rgba(0, 0, 0, 0.6),
+    0 0 30px rgba(212, 175, 55, 0.5);
+}
+
+/* Date */
 .hero-date {
   font-family: var(--font-body);
-  font-size: clamp(1.2rem, 2.5vw, 1.8rem);
-  color: var(--color-secondary);
+  font-size: clamp(1.125rem, 2vw, 1.5rem);
+  color: #F5F1E8;
+  margin-top: var(--spacing-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  letter-spacing: 1px;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.5);
+}
+
+.date-day {
+  font-size: 1.4em;
+  font-weight: 600;
+  color: var(--color-gold);
+}
+
+.date-month {
   font-style: italic;
-  margin-top: var(--spacing-md);
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 2px;
 }
 
-/* Decoración de separador */
-.hero-content::before,
-.hero-content::after {
-  content: '❦';
-  display: block;
-  text-align: center;
-  color: var(--color-primary);
-  font-size: 2rem;
-  margin: var(--spacing-sm) 0;
+.date-year {
+  font-weight: 600;
+  color: var(--color-gold);
+}
+
+.date-separator {
+  color: var(--color-gold);
   opacity: 0.6;
+  font-size: 0.8em;
 }
 
-.hero-content::before {
-  margin-bottom: var(--spacing-md);
-}
-
-.hero-content::after {
+/* Location - San Miguel de Allende */
+.hero-location {
+  font-family: var(--font-accent);
+  font-size: clamp(0.875rem, 1.5vw, 1.125rem);
+  color: #FFFFFF;
+  text-transform: uppercase;
+  letter-spacing: 3px;
   margin-top: var(--spacing-md);
+  font-weight: 600;
+  text-shadow:
+    0 2px 4px rgba(0, 0, 0, 0.8),
+    0 4px 8px rgba(193, 80, 46, 0.6),
+    0 0 20px rgba(232, 180, 184, 0.4);
+  -webkit-text-stroke: 0.5px rgba(193, 80, 46, 0.3);
 }
 
-/* Responsive */
+/* Responsive Design */
 @media (max-width: 768px) {
   .hero {
-    min-height: 80vh;
+    min-height: 100vh;
+    min-height: 100svh; /* Altura viewport dinámica para mobile */
+    background-position: center center;
+    background-size: cover;
+    background-attachment: scroll; /* Importante para mobile */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--spacing-md) var(--spacing-sm);
+  }
+
+  /* Ocultar La Parroquia en mobile para ahorrar espacio */
+  .hero-parroquia {
+    display: none;
+  }
+
+  /* Ajustar overlay para mejor legibilidad en mobile */
+  .hero-overlay {
+    background: linear-gradient(
+      to bottom,
+      rgba(62, 44, 31, 0.9) 0%,
+      rgba(74, 60, 47, 0.75) 25%,
+      rgba(139, 115, 85, 0.6) 50%,
+      rgba(139, 115, 85, 0.5) 75%,
+      rgba(245, 241, 232, 0.35) 100%
+    );
+  }
+
+  .hero-floral {
+    width: 70px;
+    height: 70px;
+  }
+
+  .hero-floral-top-left,
+  .hero-floral-top-right {
+    top: 1rem;
+  }
+
+  .hero-floral-top-left {
+    left: 0.75rem;
+  }
+
+  .hero-floral-top-right {
+    right: 0.75rem;
+  }
+
+  /* Forzar centrado completo del contenido en mobile */
+  .hero-content {
+    padding: var(--spacing-md) var(--spacing-sm);
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    display: block; /* Cambiado de flex a block */
+    text-align: center;
+  }
+
+  /* Centrar todos los elementos hijos */
+  .hero-content > * {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-divider-top,
+  .hero-divider-bottom {
+    display: block;
+    text-align: center;
+    width: 100%;
+    margin: var(--spacing-sm) 0;
+  }
+
+  /* Simplificar divider en mobile */
+  .hero-divider {
+    display: block; /* Cambiado de flex a block */
+    text-align: center;
+    width: 100%;
+    margin: var(--spacing-md) auto;
+  }
+
+  .divider-line {
+    display: none; /* Ocultar líneas en mobile para simplificar */
+  }
+
+  .hero-title {
+    font-size: clamp(2.5rem, 10vw, 4rem);
+    line-height: 1.1;
+    margin: var(--spacing-xs) auto;
+    text-align: center;
+    width: 100%;
+  }
+
+  .hero-subtitle {
+    font-size: clamp(0.75rem, 3vw, 1rem);
+    letter-spacing: 4px;
+    text-align: center;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-date {
+    display: block; /* Cambiado de flex a block */
+    text-align: center;
+    width: 100%;
+    margin: var(--spacing-md) auto 0;
+    font-size: clamp(1rem, 4vw, 1.25rem);
+  }
+
+  .date-day,
+  .date-month,
+  .date-year {
+    display: block;
+    text-align: center;
+    margin: 0.25rem auto;
+  }
+
+  .date-separator {
+    display: none;
+  }
+
+  .date-day,
+  .date-year {
+    font-size: 1.4em;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding: var(--spacing-sm);
+    background-position: 60% center; /* Ajuste fino para móviles pequeños */
+  }
+
+  .hero-floral {
+    width: 50px;
+    height: 50px;
+    opacity: 0.4;
+  }
+
+  .hero-floral-top-left,
+  .hero-floral-top-right {
+    top: 0.5rem;
   }
 
   .hero-content {
-    padding: var(--spacing-md);
+    padding: var(--spacing-sm);
+    text-align: center;
   }
 
-  .hero::after {
-    font-size: 2rem;
-    top: 1rem;
-    right: 1rem;
+  .hero-title {
+    font-size: clamp(2rem, 12vw, 3rem);
+    letter-spacing: 1px;
+    text-align: center;
+    width: 100%;
+  }
+
+  .hero-title .ampersand {
+    display: inline; /* Mantener inline para que fluya naturalmente */
+    margin: 0 0.2em;
+    font-size: 0.9em;
+  }
+
+  .hero-subtitle {
+    letter-spacing: 3px;
+    margin-bottom: var(--spacing-xs);
+    text-align: center;
+    width: 100%;
+  }
+
+  .divider-ornament {
+    font-size: 1.5rem;
+  }
+
+  .hero-divider {
+    margin: var(--spacing-sm) auto;
+    text-align: center;
+  }
+
+  .hero-divider-top,
+  .hero-divider-bottom {
+    margin: var(--spacing-sm) 0;
+    text-align: center;
+  }
+}
+
+/* Landscape mobile optimization */
+@media (max-width: 768px) and (orientation: landscape) {
+  .hero {
+    min-height: 100vh;
+    background-position: center center;
+  }
+
+  .hero-content {
+    padding: var(--spacing-sm);
+  }
+
+  .hero-title {
+    font-size: clamp(2rem, 8vw, 3.5rem);
+  }
+
+  .hero-floral {
+    display: none; /* Ocultar florales en landscape para ahorrar espacio */
   }
 }

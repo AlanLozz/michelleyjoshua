@@ -69,9 +69,9 @@ const EventInfo = () => {
           <FaMapMarkerAlt className="event-icon" />
           <h3>Lugar</h3>
           <p>Hacienda Los Robles</p>
-          <p className="event-address">Calle Principal 123, Ciudad</p>
+          <p className="event-address">San Miguel de Allende, Guanajuato</p>
           <a
-            href="https://maps.google.com"
+            href="https://maps.google.com/?q=San+Miguel+de+Allende"
             target="_blank"
             rel="noopener noreferrer"
             className="event-map-link"

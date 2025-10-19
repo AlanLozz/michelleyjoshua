@@ -122,7 +122,7 @@
   width: 60px;
   height: 60px;
   background-color: var(--color-primary);
-  color: var(--color-cream);
+  color: white;
   border: 3px solid var(--color-cream);
   cursor: pointer;
   z-index: 10;
@@ -134,10 +134,25 @@
   box-shadow: var(--shadow-md);
 }
 
+/* Iconos de navegación */
+.carousel-button .carousel-icon {
+  font-size: 2.5rem;
+  line-height: 1;
+  font-weight: bold;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .carousel-button:hover {
   background-color: var(--color-secondary);
   transform: translateY(-50%) scale(1.1);
   box-shadow: var(--shadow-lg);
+}
+
+.carousel-button:hover .carousel-icon {
+  color: white;
 }
 
 .carousel-button:active {
@@ -245,6 +260,10 @@
     height: 45px;
     font-size: 1rem;
     border-width: 2px;
+  }
+
+  .carousel-button .carousel-icon {
+    font-size: 2rem;
   }
 
   .carousel-button-prev {

@@ -1,17 +1,16 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import '../styles/Gallery.css';
 
 const Gallery = () => {
   // Placeholder para imágenes - el usuario agregará las suyas
   const photos = [
-    { id: 1, src: 'https://via.placeholder.com/800x600?text=Foto+1', alt: 'Foto 1' },
-    { id: 2, src: 'https://via.placeholder.com/800x600?text=Foto+2', alt: 'Foto 2' },
-    { id: 3, src: 'https://via.placeholder.com/800x600?text=Foto+3', alt: 'Foto 3' },
-    { id: 4, src: 'https://via.placeholder.com/800x600?text=Foto+4', alt: 'Foto 4' },
-    { id: 5, src: 'https://via.placeholder.com/800x600?text=Foto+5', alt: 'Foto 5' },
-    { id: 6, src: 'https://via.placeholder.com/800x600?text=Foto+6', alt: 'Foto 6' }
+    { id: 1, src: '/images/image_1.jpg', alt: 'Foto 1' },
+    { id: 2, src: '/images/image_2.jpg', alt: 'Foto 2' },
+    // { id: 3, src: 'https://via.placeholder.com/800x600?text=Foto+3', alt: 'Foto 3' },
+    // { id: 4, src: 'https://via.placeholder.com/800x600?text=Foto+4', alt: 'Foto 4' },
+    // { id: 5, src: 'https://via.placeholder.com/800x600?text=Foto+5', alt: 'Foto 5' },
+    // { id: 6, src: 'https://via.placeholder.com/800x600?text=Foto+6', alt: 'Foto 6' }
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -108,14 +107,14 @@ const Gallery = () => {
           onClick={() => paginate(-1)}
           aria-label="Foto anterior"
         >
-          <FaChevronLeft />
+          <span className="carousel-icon">‹</span>
         </button>
         <button
           className="carousel-button carousel-button-next"
           onClick={() => paginate(1)}
           aria-label="Siguiente foto"
         >
-          <FaChevronRight />
+          <span className="carousel-icon">›</span>
         </button>
 
         {/* Indicadores (dots) */}

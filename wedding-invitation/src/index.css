@@ -2,15 +2,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&family=Lora:wght@400;500;600&family=Montserrat:wght@300;400;500&display=swap');
 
 :root {
-  /* Paleta de colores rústicos */
-  --color-primary: #8B7355;        /* Marrón tierra */
-  --color-secondary: #A0826D;      /* Marrón claro */
-  --color-accent: #6B8E23;         /* Verde oliva */
+  /* Paleta de colores San Miguel de Allende */
+  --color-primary: #C1502E;        /* Terracota - Fachadas coloniales */
+  --color-secondary: #8B4789;      /* Morado colonial - Puertas y detalles */
+  --color-accent: #F08080;         /* Coral mexicano */
+  --color-parroquia: #E8B4B8;      /* Rosa de La Parroquia */
   --color-light: #F5F1E8;          /* Beige claro */
   --color-cream: #FFF8E7;          /* Crema */
   --color-dark: #4A3C2F;           /* Marrón oscuro */
   --color-text: #3E2C1F;           /* Texto oscuro */
-  --color-wood: #8B6F47;           /* Madera */
+  --color-terracota-dark: #A63C1F; /* Terracota oscuro */
+  --color-gold: #D4AF37;           /* Dorado barroco */
+  --color-bronze: #CD7F32;         /* Bronce */
+  --color-mexican-pink: #D8668A;   /* Rosa mexicano vibrante */
+  --color-sage: #8A9B68;           /* Verde salvia - Plantas coloniales */
 
   /* Tipografía */
   --font-display: 'Playfair Display', serif;
@@ -24,10 +29,12 @@
   --spacing-lg: 3rem;
   --spacing-xl: 4rem;
 
-  /* Sombras */
-  --shadow-sm: 0 2px 4px rgba(62, 44, 31, 0.1);
-  --shadow-md: 0 4px 8px rgba(62, 44, 31, 0.15);
-  --shadow-lg: 0 8px 16px rgba(62, 44, 31, 0.2);
+  /* Sombras - Enhanced for modern depth */
+  --shadow-sm: 0 2px 4px rgba(193, 80, 46, 0.1);
+  --shadow-md: 0 4px 8px rgba(193, 80, 46, 0.15);
+  --shadow-lg: 0 8px 16px rgba(193, 80, 46, 0.2);
+  --shadow-gold: 0 2px 12px rgba(212, 175, 55, 0.4);
+  --shadow-pink: 0 2px 12px rgba(232, 180, 184, 0.3);
 }
 
 * {
