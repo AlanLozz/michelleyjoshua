@@ -3,7 +3,7 @@ import Countdown from './components/Countdown';
 import EventInfo from './components/EventInfo';
 import Timeline from './components/Timeline';
 import Gallery from './components/Gallery';
-import GiftRegistry from './components/GiftRegistry';
+// import GiftRegistry from './components/GiftRegistry';
 import RSVP from './components/RSVP';
 import MusicPlayer from './components/MusicPlayer';
 import './App.css';
@@ -20,7 +20,7 @@ function App() {
         <EventInfo />
         <Timeline />
         <Gallery />
-        <GiftRegistry />
+        {/* <GiftRegistry /> */}
         <RSVP />
       </div>
       <MusicPlayer />
