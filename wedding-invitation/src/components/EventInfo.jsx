@@ -71,7 +71,7 @@ const EventInfo = () => {
           <p>Finca Gariza</p>
           <p className="event-address">San Miguel de Allende, Guanajuato</p>
           <a
-            href="https://maps.app.goo.gl/iLDjSXQtHFnPpB6s6"
+            href="https://maps.app.goo.gl/weSFHR5uK34s1mv86"
             target="_blank"
             rel="noopener noreferrer"
             className="event-map-link"

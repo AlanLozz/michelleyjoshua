@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import '../styles/Gallery.css';
 
@@ -7,14 +7,29 @@ const Gallery = () => {
   const photos = [
     { id: 1, src: '/images/image_1.jpg', alt: 'Foto 1' },
     { id: 2, src: '/images/image_2.jpg', alt: 'Foto 2' },
-    // { id: 3, src: 'https://via.placeholder.com/800x600?text=Foto+3', alt: 'Foto 3' },
-    // { id: 4, src: 'https://via.placeholder.com/800x600?text=Foto+4', alt: 'Foto 4' },
-    // { id: 5, src: 'https://via.placeholder.com/800x600?text=Foto+5', alt: 'Foto 5' },
-    // { id: 6, src: 'https://via.placeholder.com/800x600?text=Foto+6', alt: 'Foto 6' }
+    { id: 3, src: '/images/image_3.jpg', alt: 'Foto 3' },
+    { id: 4, src: '/images/image_4.jpg', alt: 'Foto 4' },
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
   const [direction, setDirection] = useState(0);
+  const [isHovered, setIsHovered] = useState(false);
+
+  // Autoplay - cambiar foto cada 5 segundos
+  useEffect(() => {
+    if (!isHovered && photos.length > 1) {
+      const interval = setInterval(() => {
+        setDirection(1);
+        setCurrentIndex((prevIndex) => {
+          let newIndex = prevIndex + 1;
+          if (newIndex >= photos.length) newIndex = 0;
+          return newIndex;
+        });
+      }, 5000); // 5 segundos
+
+      return () => clearInterval(interval);
+    }
+  }, [currentIndex, isHovered, photos.length]);
 
   const slideVariants = {
     enter: (direction) => ({
@@ -65,7 +80,11 @@ const Gallery = () => {
         Nuestra Historia
       </motion.h2>
 
-      <div className="carousel-container">
+      <div
+        className="carousel-container"
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+      >
         <AnimatePresence initial={false} custom={direction}>
           <motion.div
             key={currentIndex}

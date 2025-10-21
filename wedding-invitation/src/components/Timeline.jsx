@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { FaChurch, FaGlassCheers, FaUtensils, FaMusic } from 'react-icons/fa';
+import { FaUsers, FaChurch, FaGlassCheers, FaUtensils, FaMusic } from 'react-icons/fa';
 import '../styles/Timeline.css';
 
 const Timeline = () => {
@@ -7,30 +7,38 @@ const Timeline = () => {
     {
       id: 1,
       time: '4:30 PM',
+      title: 'Llegada de Invitados',
+      description: 'Recepción y bienvenida',
+      icon: FaUsers,
+      color: 'var(--color-sage)'
+    },
+    {
+      id: 2,
+      time: '5:00 PM',
       title: 'Ceremonia',
       description: 'Nos unimos en matrimonio',
       icon: FaChurch,
       color: 'var(--color-primary)'
     },
     {
-      id: 2,
-      time: '5:30 PM',
+      id: 3,
+      time: '6:00 PM',
       title: 'Cóctel de Bienvenida',
       description: 'Bebidas y aperitivos',
       icon: FaGlassCheers,
       color: 'var(--color-secondary)'
     },
     {
-      id: 3,
+      id: 4,
       time: '7:00 PM',
-      title: 'Recepción y Cena',
-      description: 'Cena y brindis',
+      title: 'Cena',
+      description: 'Banquete y brindis',
       icon: FaUtensils,
       color: 'var(--color-parroquia)'
     },
     {
-      id: 4,
-      time: '9:00 PM',
+      id: 5,
+      time: '8:00 PM',
       title: 'Baile y Fiesta',
       description: '¡A bailar toda la noche!',
       icon: FaMusic,
