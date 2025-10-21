@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { FaMapMarkerAlt, FaClock, FaCalendarAlt } from 'react-icons/fa';
+import { FaMapMarkerAlt, FaClock, FaCalendarAlt, FaTshirt } from 'react-icons/fa';
 import '../styles/EventInfo.css';
 
 const EventInfo = () => {
@@ -78,6 +78,21 @@ const EventInfo = () => {
           >
             Ver en Maps
           </a>
+        </motion.div>
+
+        <motion.div
+          className="event-card"
+          custom={3}
+          variants={cardVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          whileHover={{ scale: 1.05 }}
+        >
+          <FaTshirt className="event-icon" />
+          <h3>Código de Vestimenta</h3>
+          <p>Formal</p>
+          <p className="event-note">Por favor evita usar rojo</p>
         </motion.div>
       </div>
     </section>
