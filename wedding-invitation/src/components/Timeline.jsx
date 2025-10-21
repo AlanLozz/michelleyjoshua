@@ -23,17 +23,17 @@ const Timeline = () => {
     {
       id: 3,
       time: '6:00 PM',
-      title: 'Cóctel de Bienvenida',
-      description: 'Bebidas y aperitivos',
-      icon: FaGlassCheers,
+      title: 'Cena',
+      description: 'Servicio de alimentos y bebidas',
+      icon: FaUtensils,
       color: 'var(--color-secondary)'
     },
     {
       id: 4,
       time: '7:00 PM',
-      title: 'Cena',
-      description: 'Banquete y brindis',
-      icon: FaUtensils,
+      title: 'Brindis y Baile',
+      description: 'Primer baile y brindis',
+      icon: FaGlassCheers,
       color: 'var(--color-parroquia)'
     },
     {
