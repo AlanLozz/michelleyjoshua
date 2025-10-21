@@ -136,7 +136,7 @@ const RSVP = () => {
           transition={{ delay: 0.4, duration: 0.6 }}
         >
           Tu presencia es muy importante para nosotros.
-          Por favor confirma tu asistencia antes del 1 de Noviembre.
+          Por favor confirma tu asistencia antes del 10 de Noviembre.
         </motion.p>
 
         <motion.form
@@ -240,7 +240,7 @@ const RSVP = () => {
               value={formData.mensaje}
               onChange={handleChange}
               rows="4"
-              placeholder="Alguna restricción alimentaria, mensaje especial o algo que quieras compartir con nosotros..."
+              placeholder="Mensaje especial o algo que quieras compartir con nosotros..."
             />
           </div>
 
