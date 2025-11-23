@@ -58,12 +58,54 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
+  touch-action: none;
 }
 
 .canvas-wrapper.portrait-scroll {
   overflow-x: auto;
   overflow-y: hidden;
   justify-content: flex-start;
+}
+
+.zoom-controls {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  z-index: 10;
+}
+
+.zoom-btn {
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.zoom-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+.zoom-btn:active {
+  transform: scale(0.95);
+}
+
+.zoom-btn.reset {
+  font-size: 1.3rem;
 }
 
 .rotate-hint {
@@ -293,6 +335,22 @@
     height: 25px;
   }
 
+  .zoom-controls {
+    top: 10px;
+    right: 10px;
+    gap: 6px;
+  }
+
+  .zoom-btn {
+    width: 36px;
+    height: 36px;
+    font-size: 1.3rem;
+  }
+
+  .zoom-btn.reset {
+    font-size: 1.1rem;
+  }
+
   .no-assignment p:first-child {
     font-size: 1.5rem;
   }
@@ -344,5 +402,21 @@
   .legend-color {
     width: 20px;
     height: 20px;
+  }
+
+  .zoom-controls {
+    top: 8px;
+    right: 8px;
+    gap: 5px;
+  }
+
+  .zoom-btn {
+    width: 32px;
+    height: 32px;
+    font-size: 1.2rem;
+  }
+
+  .zoom-btn.reset {
+    font-size: 1rem;
   }
 }

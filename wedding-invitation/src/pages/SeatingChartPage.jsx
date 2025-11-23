@@ -14,7 +14,12 @@ function SeatingChartPage() {
   const [stageSize, setStageSize] = useState({ width: 1200, height: 800 });
   const [isPortrait, setIsPortrait] = useState(false);
   const [showRotateHint, setShowRotateHint] = useState(false);
+  const [stageScale, setStageScale] = useState(1);
+  const [stagePosition, setStagePosition] = useState({ x: 0, y: 0 });
   const containerRef = useRef(null);
+  const stageRef = useRef(null);
+  const lastCenter = useRef(null);
+  const lastDist = useRef(0);
 
   useEffect(() => {
     // Cargar datos al montar el componente
@@ -32,6 +37,99 @@ function SeatingChartPage() {
       }
     }
   }, [guestId, assignments, layout]);
+
+  // Funciones de zoom y pan
+  const getDistance = (p1, p2) => {
+    return Math.sqrt(Math.pow(p2.x - p1.x, 2) + Math.pow(p2.y - p1.y, 2));
+  };
+
+  const getCenter = (p1, p2) => {
+    return {
+      x: (p1.x + p2.x) / 2,
+      y: (p1.y + p2.y) / 2,
+    };
+  };
+
+  const handleWheel = (e) => {
+    e.evt.preventDefault();
+    const stage = stageRef.current;
+    if (!stage) return;
+
+    const oldScale = stage.scaleX();
+    const pointer = stage.getPointerPosition();
+
+    const mousePointTo = {
+      x: (pointer.x - stage.x()) / oldScale,
+      y: (pointer.y - stage.y()) / oldScale,
+    };
+
+    const newScale = e.evt.deltaY < 0 ? oldScale * 1.1 : oldScale / 1.1;
+    const clampedScale = Math.max(0.5, Math.min(3, newScale));
+
+    setStageScale(clampedScale);
+    setStagePosition({
+      x: pointer.x - mousePointTo.x * clampedScale,
+      y: pointer.y - mousePointTo.y * clampedScale,
+    });
+  };
+
+  const handleTouchMove = (e) => {
+    e.evt.preventDefault();
+    const touch1 = e.evt.touches[0];
+    const touch2 = e.evt.touches[1];
+    const stage = stageRef.current;
+    if (!stage) return;
+
+    if (touch1 && touch2) {
+      // Pinch to zoom
+      const p1 = { x: touch1.clientX, y: touch1.clientY };
+      const p2 = { x: touch2.clientX, y: touch2.clientY };
+      const newCenter = getCenter(p1, p2);
+      const dist = getDistance(p1, p2);
+
+      if (lastDist.current === 0) {
+        lastDist.current = dist;
+        lastCenter.current = newCenter;
+        return;
+      }
+
+      const pointTo = {
+        x: (newCenter.x - stage.x()) / stage.scaleX(),
+        y: (newCenter.y - stage.y()) / stage.scaleY(),
+      };
+
+      const scale = stage.scaleX() * (dist / lastDist.current);
+      const clampedScale = Math.max(0.5, Math.min(3, scale));
+
+      setStageScale(clampedScale);
+      setStagePosition({
+        x: newCenter.x - pointTo.x * clampedScale,
+        y: newCenter.y - pointTo.y * clampedScale,
+      });
+
+      lastDist.current = dist;
+      lastCenter.current = newCenter;
+    }
+  };
+
+  const handleTouchEnd = () => {
+    lastDist.current = 0;
+  };
+
+  const handleZoomIn = () => {
+    const newScale = Math.min(3, stageScale * 1.2);
+    setStageScale(newScale);
+  };
+
+  const handleZoomOut = () => {
+    const newScale = Math.max(0.5, stageScale / 1.2);
+    setStageScale(newScale);
+  };
+
+  const handleResetZoom = () => {
+    setStageScale(1);
+    setStagePosition({ x: 0, y: 0 });
+  };
 
   useEffect(() => {
     // Detectar orientación y ajustar canvas
@@ -403,13 +501,36 @@ function SeatingChartPage() {
                 transition={{ duration: 0.5 }}
               >
                 <span className="rotate-icon">📱</span>
-                <p>Rota tu teléfono horizontalmente para una mejor visualización</p>
+                <p>Usa dos dedos para hacer zoom o rota tu teléfono horizontalmente para una mejor visualización</p>
                 <button onClick={() => setShowRotateHint(false)} className="close-hint">✕</button>
               </motion.div>
             )}
 
             <div className={`canvas-wrapper ${isPortrait ? 'portrait-scroll' : ''}`} ref={containerRef}>
-              <Stage width={stageSize.width} height={stageSize.height}>
+              <div className="zoom-controls">
+                <button className="zoom-btn" onClick={handleZoomIn} title="Acercar">+</button>
+                <button className="zoom-btn" onClick={handleZoomOut} title="Alejar">−</button>
+                <button className="zoom-btn reset" onClick={handleResetZoom} title="Restablecer">⟲</button>
+              </div>
+              <Stage
+                width={stageSize.width}
+                height={stageSize.height}
+                ref={stageRef}
+                scaleX={stageScale}
+                scaleY={stageScale}
+                x={stagePosition.x}
+                y={stagePosition.y}
+                draggable
+                onWheel={handleWheel}
+                onTouchMove={handleTouchMove}
+                onTouchEnd={handleTouchEnd}
+                onDragEnd={(e) => {
+                  setStagePosition({
+                    x: e.target.x(),
+                    y: e.target.y(),
+                  });
+                }}
+              >
                 <Layer>
                   {/* Renderizar todos los elementos decorativos */}
                   {layout.elements.map(element => renderElement(element))}
