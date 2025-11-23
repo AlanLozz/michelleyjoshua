@@ -1,0 +1,338 @@
+{
+  "tables": [
+    {
+      "id": "table-1763834605877",
+      "type": "rectangular",
+      "label": "Mesa principal",
+      "position": {
+        "x": 518,
+        "y": 38
+      },
+      "capacity": 12,
+      "rotation": 0,
+      "width": 200,
+      "height": 59
+    },
+    {
+      "id": "table-1763835216907",
+      "type": "round",
+      "label": "Mesa 1",
+      "position": {
+        "x": 250,
+        "y": 84
+      },
+      "capacity": 10,
+      "rotation": 0
+    },
+    {
+      "id": "table-1763835254726",
+      "type": "round",
+      "label": "Mesa 5",
+      "position": {
+        "x": 249,
+        "y": 288
+      },
+      "capacity": 10,
+      "rotation": 0
+    },
+    {
+      "id": "table-1763835282390",
+      "type": "round",
+      "label": "Mesa 2",
+      "position": {
+        "x": 401,
+        "y": 82
+      },
+      "capacity": 10,
+      "rotation": 0
+    },
+    {
+      "id": "table-1763835283044",
+      "type": "round",
+      "label": "Mesa 6",
+      "position": {
+        "x": 403,
+        "y": 284
+      },
+      "capacity": 10,
+      "rotation": 0
+    },
+    {
+      "id": "table-1763835699412",
+      "type": "round",
+      "label": "Mesa 9",
+      "position": {
+        "x": 978,
+        "y": 411
+      },
+      "capacity": 10,
+      "rotation": 0
+    },
+    {
+      "id": "table-1763837349805",
+      "type": "round",
+      "label": "Mesa 3",
+      "position": {
+        "x": 812,
+        "y": 81
+      },
+      "capacity": 10,
+      "rotation": 0
+    },
+    {
+      "id": "table-1763837350384",
+      "type": "round",
+      "label": "Mesa 7",
+      "position": {
+        "x": 813,
+        "y": 280
+      },
+      "capacity": 10,
+      "rotation": 0
+    },
+    {
+      "id": "table-1763837350931",
+      "type": "round",
+      "label": "Mesa 4",
+      "position": {
+        "x": 973,
+        "y": 76
+      },
+      "capacity": 10,
+      "rotation": 0
+    },
+    {
+      "id": "table-1763837351466",
+      "type": "round",
+      "label": "Mesa 8",
+      "position": {
+        "x": 981,
+        "y": 272
+      },
+      "capacity": 10,
+      "rotation": 0
+    },
+    {
+      "id": "table-1763837352041",
+      "type": "round",
+      "label": "Mesa 10",
+      "position": {
+        "x": 840,
+        "y": 415
+      },
+      "capacity": 10,
+      "rotation": 0
+    },
+    {
+      "id": "table-1763838772378",
+      "type": "round",
+      "label": "Mesa 11",
+      "position": {
+        "x": 625,
+        "y": 420
+      },
+      "capacity": 10,
+      "rotation": 0
+    },
+    {
+      "id": "table-1763838773537",
+      "type": "round",
+      "label": "Mesa 12",
+      "position": {
+        "x": 527,
+        "y": 423
+      },
+      "capacity": 10,
+      "rotation": 0
+    },
+    {
+      "id": "table-1763838894546",
+      "type": "round",
+      "label": "Mesa 13",
+      "position": {
+        "x": 396,
+        "y": 426
+      },
+      "capacity": 10,
+      "rotation": 0
+    },
+    {
+      "id": "table-1763838895203",
+      "type": "round",
+      "label": "Mesa 14",
+      "position": {
+        "x": 266,
+        "y": 432
+      },
+      "capacity": 10,
+      "rotation": 0
+    },
+    {
+      "id": "table-1763838946234",
+      "type": "round",
+      "label": "Mesa 15",
+      "position": {
+        "x": 340,
+        "y": 513
+      },
+      "capacity": 10,
+      "rotation": 0
+    },
+    {
+      "id": "table-1763838946563",
+      "type": "round",
+      "label": "Mesa 16",
+      "position": {
+        "x": 912,
+        "y": 485
+      },
+      "capacity": 10,
+      "rotation": 0
+    }
+  ],
+  "elements": [
+    {
+      "id": "element-1763834682505",
+      "type": "bathroom",
+      "label": "Baños",
+      "position": {
+        "x": 8,
+        "y": 42
+      },
+      "width": 80,
+      "height": 300,
+      "rotation": 0,
+      "color": "#D4AF37"
+    },
+    {
+      "id": "element-1763834705390",
+      "type": "bar",
+      "label": "Barra de bebidas",
+      "position": {
+        "x": 99,
+        "y": 43
+      },
+      "width": 85,
+      "height": 295,
+      "rotation": 0,
+      "color": "#8B4789"
+    },
+    {
+      "id": "element-1763837003384",
+      "type": "wall",
+      "label": "Pared",
+      "position": {
+        "x": 15,
+        "y": 4
+      },
+      "width": 1038,
+      "height": 20,
+      "color": "#4A3C2F",
+      "rotation": 0
+    },
+    {
+      "id": "element-1763837402914",
+      "type": "wall",
+      "label": ".",
+      "position": {
+        "x": 1037,
+        "y": 6
+      },
+      "width": 17,
+      "height": 357,
+      "color": "#4A3C2F",
+      "rotation": 0
+    },
+    {
+      "id": "element-1763837469391",
+      "type": "garden",
+      "label": ".",
+      "position": {
+        "x": 10,
+        "y": 368
+      },
+      "width": 1044,
+      "height": 366,
+      "color": "#8A9B68",
+      "rotation": 0
+    },
+    {
+      "id": "element-1763837582218",
+      "type": "dancefloor",
+      "label": "Pista de baile",
+      "position": {
+        "x": 461,
+        "y": 111
+      },
+      "width": 298,
+      "height": 221,
+      "color": "#F5F1E8",
+      "rotation": 0
+    },
+    {
+      "id": "element-1763838853550",
+      "type": "tree",
+      "label": "Palmera",
+      "position": {
+        "x": 693,
+        "y": 371
+      },
+      "width": 80,
+      "height": 80,
+      "color": "#2F5233",
+      "rotation": 0
+    },
+    {
+      "id": "element-1763839223499",
+      "type": "games",
+      "label": "Juegos",
+      "position": {
+        "x": 681,
+        "y": 591
+      },
+      "width": 226,
+      "height": 100,
+      "color": "#D4AF37",
+      "rotation": 0
+    },
+    {
+      "id": "element-1763839279066",
+      "type": "entrance",
+      "label": "Entrada",
+      "position": {
+        "x": 296,
+        "y": 635
+      },
+      "width": 73,
+      "height": 60,
+      "color": "#8B4789",
+      "rotation": 0
+    },
+    {
+      "id": "element-1763839518830",
+      "type": "fountain",
+      "label": "Fuente",
+      "position": {
+        "x": 13,
+        "y": 489
+      },
+      "width": 84,
+      "height": 178,
+      "color": "#87CEEB",
+      "rotation": 0
+    },
+    {
+      "id": "element-1763839519944",
+      "type": "altar",
+      "label": "Altar Ceremonial",
+      "position": {
+        "x": 102,
+        "y": 526
+      },
+      "width": 180,
+      "height": 107,
+      "color": "#F5DEB3",
+      "rotation": 0
+    }
+  ]
+}

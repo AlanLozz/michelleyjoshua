@@ -1,30 +1,24 @@
-import Hero from './components/Hero';
-import Countdown from './components/Countdown';
-import EventInfo from './components/EventInfo';
-import Timeline from './components/Timeline';
-import Gallery from './components/Gallery';
-// import GiftRegistry from './components/GiftRegistry';
-import RSVP from './components/RSVP';
-import MusicPlayer from './components/MusicPlayer';
+import { Routes, Route } from 'react-router-dom';
+import InvitationPage from './pages/InvitationPage';
+import SeatingChartPage from './pages/SeatingChartPage';
+import AdminSeatingChartPage from './pages/AdminSeatingChartPage';
+import ProtectedRoute from './components/ProtectedRoute';
 import './App.css';
 
 function App() {
-  // Fecha de la boda - Ajustar según necesidad
-  const weddingDate = "2025-11-29T16:30:00";
-
   return (
-    <>
-      <div className="app">
-        <Hero />
-        <Countdown weddingDate={weddingDate} />
-        <EventInfo />
-        <Timeline />
-        <Gallery />
-        {/* <GiftRegistry /> */}
-        <RSVP />
-      </div>
-      <MusicPlayer />
-    </>
+    <Routes>
+      <Route path="/" element={<InvitationPage />} />
+      <Route path="/seating" element={<SeatingChartPage />} />
+      <Route
+        path="/admin/seating"
+        element={
+          <ProtectedRoute>
+            <AdminSeatingChartPage />
+          </ProtectedRoute>
+        }
+      />
+    </Routes>
   );
 }
 
