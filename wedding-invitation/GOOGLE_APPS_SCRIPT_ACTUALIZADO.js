@@ -166,6 +166,8 @@ function handleGetGuests() {
           guest.nombre = value;
         } else if (header.includes('Email') || header.includes('email') || header.includes('Correo')) {
           guest.email = value;
+        } else if (header.includes('Teléfono') || header.includes('teléfono') || header.includes('Telefono') || header.includes('telefono')) {
+          guest.telefono = value;
         } else if (header.includes('Asistencia') || header.includes('asistencia')) {
           guest.asistencia = value;
         } else if (header.includes('Acompañantes') || header.includes('acompañantes')) {

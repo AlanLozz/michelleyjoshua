@@ -50,7 +50,8 @@ const useSeatingStore = create((set, get) => ({
     //   nombre: 'Juan Pérez',
     //   asistencia: 'Si',
     //   acompanantes: 2,
-    //   email: 'juan@example.com'
+    //   email: 'juan@example.com',
+    //   telefono: '+521234567890'
     // }
   ],
 
