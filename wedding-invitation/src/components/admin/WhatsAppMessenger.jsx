@@ -5,17 +5,19 @@ import '../../styles/admin/WhatsAppMessenger.css';
 // Template del mensaje
 const MESSAGE_TEMPLATE = `¡Hola [Nombre del Invitado]!
 
-¡La cuenta regresiva ha comenzado y estamos a punto de celebrar el amor de Michelle y Joshua!
+Ojalá estés muy bien.
 
-Para que tu experiencia sea perfecta desde el momento en que llegues, te compartimos el enlace a tu mesa asignada. Así podrás encontrar tu lugar sin contratiempos y unirte rápidamente a la fiesta.
+Te queremos contar que, con el frío que ha estado haciendo en San Miguel de Allende, decidimos reacomodar algunas mesas para que todos estén más cómodos y calientitos durante la boda.
 
+Sabemos que ya habías recibido tu mesa asignada y lamentamos cualquier molestia que este cambio pueda causarte, pero lo hicimos pensando en que tú y todos nuestros invitados puedan disfrutar la noche sin preocuparse por el clima.
+
+Puedes revisar tu nueva mesa en este enlace:
 [Aquí va el link a la notificación de mesa]
 
-Un pequeño consejo de los novios: el clima es tan impredecible como el amor a primera vista, ¡así que te recomendamos traer un abrigo o algo para cubrirte por si refresca! Queremos que disfrutes al máximo sin preocuparte por el frío.
+Gracias por tu comprensión y por acompañarnos en un día tan importante.
+Nos hace muchísima ilusión compartir esta celebración contigo.
 
-Prepárate para una noche llena de alegría, baile y momentos inolvidables. ¡Estamos ansiosos por verte y celebrar juntos!
-
-Con cariño,
+Con mucho cariño,
 Michelle y Joshua`;
 
 function WhatsAppMessenger() {
