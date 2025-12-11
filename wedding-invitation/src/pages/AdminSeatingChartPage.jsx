@@ -4,6 +4,7 @@ import LayoutEditor from '../components/admin/LayoutEditor';
 import GuestAssigner from '../components/admin/GuestAssigner';
 import LinkGenerator from '../components/admin/LinkGenerator';
 import WhatsAppMessenger from '../components/admin/WhatsAppMessenger';
+import ThankYouMessenger from '../components/admin/ThankYouMessenger';
 import '../styles/AdminSeatingChart.css';
 
 function AdminSeatingChartPage() {
@@ -14,6 +15,7 @@ function AdminSeatingChartPage() {
     { id: 'assign', label: 'Asignar Invitados', icon: '👥' },
     { id: 'links', label: 'Generar Links', icon: '🔗' },
     { id: 'whatsapp', label: 'Enviar WhatsApp', icon: '💬' },
+    { id: 'thankyou', label: 'Agradecimientos', icon: '💕' },
   ];
 
   const renderTabContent = () => {
@@ -26,6 +28,8 @@ function AdminSeatingChartPage() {
         return <LinkGenerator />;
       case 'whatsapp':
         return <WhatsAppMessenger />;
+      case 'thankyou':
+        return <ThankYouMessenger />;
       default:
         return null;
     }
